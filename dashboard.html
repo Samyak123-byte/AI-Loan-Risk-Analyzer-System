@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<div class="navbar">
+    <h2>📊 Admin Dashboard</h2>
+    <div>
+        <a href="/" class="logout">Home</a>
+        <a href="/logout" class="logout">Logout</a>
+    </div>
+</div>
+
+<div class="container">
+
+    <div class="card">
+
+        <h1>Loan Analytics</h1>
+
+        <!-- STATS -->
+        <div class="stats">
+            <div class="stat-box">Total<br><b>{{ total }}</b></div>
+            <div class="stat-box">Approved<br><b>{{ approved }}</b></div>
+            <div class="stat-box">Rejected<br><b>{{ rejected }}</b></div>
+        </div>
+
+        <!-- CHART -->
+        <canvas id="loanChart" style="max-width:400px; margin:auto;"></canvas>
+
+        <!-- TABLE -->
+        <h2>All Applications</h2>
+
+        {% if data %}
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Income</th>
+                <th>Loan</th>
+                <th>Result</th>
+                <th>Date</th>
+            </tr>
+
+            {% for row in data %}
+            <tr>
+                <td>{{ row[0] }}</td>
+                <td>{{ row[1] }}</td>
+                <td>{{ row[2] }}</td>
+                <td>{{ row[3] }}</td>
+                <td>{{ row[4] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        {% else %}
+            <p style="text-align:center; margin-top:20px;">
+                No data available yet.
+            </p>
+        {% endif %}
+
+    </div>
+
+</div>
+
+<!-- CHART SCRIPT -->
+<script>
+const ctx = document.getElementById('loanChart');
+
+const labels = {{ chart_labels | tojson | safe }};
+const values = {{ chart_values | tojson | safe }};
+
+// Prevent chart crash if empty
+if (labels.length > 0 && values.length > 0) {
+    new Chart(ctx, {
+        type: 'pie',
+        data: {
+            labels: labels,
+            datasets: [{
+                label: 'Loan Status',
+                data: values,
+                backgroundColor: ['green', 'red']
+            }]
+        },
+        options: {
+            responsive: true
+        }
+    });
+}
+</script>
+
+</body>
+</html>

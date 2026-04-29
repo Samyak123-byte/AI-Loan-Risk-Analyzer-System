@@ -1,0 +1,217 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Background */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background: rgba(0,0,0,0.3);
+    color: white;
+}
+
+.navbar div a {
+    margin-left: 10px;
+}
+
+/* Buttons (Navbar links) */
+.logout {
+    color: white;
+    text-decoration: none;
+    background: red;
+    padding: 8px 15px;
+    border-radius: 5px;
+}
+
+/* Container */
+.container {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+/* Card */
+.card {
+    background: white;
+    padding: 30px;
+    width: 750px;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.01);
+}
+
+/* Title */
+.card h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Form Grid */
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+/* Input Box */
+.input-box label {
+    font-weight: bold;
+}
+
+/* Inputs */
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+/* Focus Effect */
+input:focus, select:focus {
+    outline: none;
+    border: 1px solid #2c5364;
+    box-shadow: 0 0 5px #2c5364;
+}
+
+/* Button */
+.btn {
+    width: 100%;
+    margin-top: 20px;
+    padding: 12px;
+    border: none;
+    background: #2c5364;
+    color: white;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: #203a43;
+}
+
+/* Result Box */
+.result {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+/* Success */
+.success {
+    background: #e6ffe6;
+    border-left: 5px solid green;
+}
+
+/* Reject */
+.reject {
+    background: #ffe6e6;
+    border-left: 5px solid red;
+}
+
+/* Login Page */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Login Box */
+.login-box {
+    background: white;
+    padding: 30px;
+    width: 320px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.login-box input {
+    margin: 10px 0;
+}
+
+/* Error */
+.error {
+    color: red;
+    margin-top: 10px;
+}
+
+/* ---------------- DASHBOARD ---------------- */
+
+/* Stats */
+.stats {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+.stat-box {
+    background: #2c5364;
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    width: 30%;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #2c5364;
+    color: white;
+}
+
+td, th {
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+/* Chatbot */
+.chatbot {
+    margin-top: 30px;
+    padding: 15px;
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+#chatbox {
+    height: 150px;
+    overflow-y: auto;
+    background: white;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+}
+
+.chatbot input {
+    width: 70%;
+    padding: 8px;
+}
+
+.chatbot button {
+    padding: 8px 12px;
+}

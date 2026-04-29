@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Apply for Loan</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="navbar">
+    <h2>👨 Loan Application</h2>
+    <a href="/logout" class="logout">Logout</a>
+</div>
+
+<div class="container">
+<div class="card">
+
+<h1>Apply for Loan</h1>
+
+<form action="/predict" method="post">
+
+<div class="form-grid">
+
+<input type="text" placeholder="Full Name" required>
+<input type="email" placeholder="Email" required>
+
+<input type="number" name="age" placeholder="Age" required>
+<input type="number" name="income" placeholder="Income" required>
+<input type="number" name="loan_amount" placeholder="Loan Amount" required>
+
+<select name="gender">
+<option value="1">Male</option>
+<option value="0">Female</option>
+</select>
+
+<select name="married">
+<option value="1">Married</option>
+<option value="0">Single</option>
+</select>
+
+<select name="credit_history">
+<option value="1">Good</option>
+<option value="0">Bad</option>
+</select>
+
+</div>
+
+<button class="btn">Apply</button>
+
+</form>
+
+</div>
+</div>
+
+</body>
+</html>
